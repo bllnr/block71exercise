@@ -13,7 +13,7 @@ public class PolygonFactory {
     // TODO: Abstract Factory: Define an interface for factories. Create a few different
     //  concrete instances of factories. Show that you can let the client (DrawPolygons)
     //  choose which factory to be used, by passing it to the initial PolygonModel, and
-    //  to the PolygonClicker (should the model and the Clicker depend on the same Factory?
+    //  to the PolygonClicker (should the model and the Clicker depend on the same Factory)?
 
     private static final int[][] rectangleOffsets = { {-20,-10}, {20,-10}, {20,10}, {-20,10}};
     private static final int[][] triangleOffsets = { {0,-10}, {10,10}, {-10,10}};
