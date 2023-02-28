@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /* package-private */ class PolygonSet implements Iterable<Polygon> {
     // TODO 5: For more challenge:
@@ -24,9 +25,6 @@ import java.util.stream.Collectors;
     }
 
     public void transformSet(Transform transform) {
-        // Transforms using stream processing. Not the prettiest,
-        // converting back and forth to lists; can you rework the
-        // entire PolygonSet to work with streams instead of lists?
         this.polygons = polygons.stream().map(transform).collect(Collectors.toList());
     }
 
