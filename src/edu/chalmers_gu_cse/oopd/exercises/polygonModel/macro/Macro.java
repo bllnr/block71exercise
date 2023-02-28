@@ -1,6 +1,6 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.macro;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.IPolygon;
+import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +18,10 @@ public class Macro implements Transform {
     }
 
     @Override
-    public IPolygon transform(final IPolygon polygon) {
-        IPolygon temp = polygon;
+    public Polygon apply(Polygon polygon) {
+        Polygon temp = polygon;
         for (Transform transform : transforms) {
-            temp = transform.transform(temp);
+            temp = transform.apply(temp);
         }
         return temp;
     }

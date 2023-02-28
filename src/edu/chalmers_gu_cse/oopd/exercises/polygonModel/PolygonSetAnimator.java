@@ -17,8 +17,8 @@ import java.util.List;
         notifyListeners();
     }
 
-    // TODO: Observer Pattern: Put the clock in a separate class, and let
-    //  PolygonModel have and start such a clock. Make the clock observable,
+    // TODO 1: Observer Pattern: Put the clock in a separate class, and let
+    //  PolygonModel have, and start, such a clock. Make the clock observable,
     //  and let this animator be an observer so that update is called on
     //  each tick.
     public void animate(Transform transform){

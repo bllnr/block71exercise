@@ -1,17 +1,17 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.internal;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.IPolygon;
+import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
 import java.awt.*;
 
 /**
  * Created by Niklas on 2016-02-28.
  */
-class TranslatedPolygon extends ManipulatedPolygon implements IPolygon {
+class TranslatedPolygon extends ManipulatedPolygon {
     int xMove;
     int yMove;
 
-    TranslatedPolygon(AbstractPolygon polygonToTranslate, int x, int y){
+    TranslatedPolygon(Polygon polygonToTranslate, int x, int y){
         super(polygonToTranslate);
         this.xMove = x;
         this.yMove = y;
@@ -24,7 +24,7 @@ class TranslatedPolygon extends ManipulatedPolygon implements IPolygon {
     }
 
     @Override
-    public AbstractPolygon translate(int x, int y) {
+    public Polygon translate(int x, int y) {
         this.xMove += x;
         this.yMove += y;
         return this;

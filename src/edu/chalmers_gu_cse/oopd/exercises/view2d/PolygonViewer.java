@@ -2,33 +2,38 @@ package edu.chalmers_gu_cse.oopd.exercises.view2d;
 
 import edu.chalmers_gu_cse.oopd.exercises.polygonModel.ModelUpdateListener;
 import edu.chalmers_gu_cse.oopd.exercises.polygonModel.PolygonModel;
+import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
 import javax.swing.*;
-import java.awt.event.MouseListener;
+import java.awt.*;
 
 /**
  * Created by Niklas on 2016-02-21.
  */
-public class PolygonViewer implements ModelUpdateListener {
+public class PolygonViewer extends JPanel implements ModelUpdateListener {
 
-    private final JFrame viewFrame = new JFrame();
+    public void addModel(PolygonModel model) {
+        for (Polygon p : model) {
+            actOnPolygonAdded(p);
+        }
+    }
 
-    public PolygonViewer() {
-        viewFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        viewFrame.setBounds(30, 30, 300, 300);
-        viewFrame.setVisible(true);
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+        for (Component c : getComponents()) {
+            c.paint(g);
+        }
+
     }
 
     @Override
     public void actOnModelUpdate() {
-        viewFrame.repaint();
+        repaint();
     }
 
-    // Delegate to the JFrame, so clients don't need to depend directly on that frame
-    public void addModel(PolygonModel model) {
-        viewFrame.add(model);
+    @Override
+    public void actOnPolygonAdded(Polygon p) {
+        add(new DrawablePolygon(p));
     }
-    public void addMouseListener(MouseListener ml) {
-        viewFrame.addMouseListener(ml);
-    }
+
 }

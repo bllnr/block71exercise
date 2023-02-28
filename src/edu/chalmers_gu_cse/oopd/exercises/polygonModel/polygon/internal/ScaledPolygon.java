@@ -1,23 +1,23 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.internal;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.IPolygon;
+import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
 import java.awt.*;
 
 /**
  * Created by Niklas on 2016-02-28.
  */
-class ScaledPolygon extends ManipulatedPolygon implements IPolygon {
+class ScaledPolygon extends ManipulatedPolygon {
     double xFactor, yFactor;
 
-    ScaledPolygon(AbstractPolygon base, double xFactor, double yFactor) {
+    ScaledPolygon(Polygon base, double xFactor, double yFactor) {
         super(base);
         this.xFactor = xFactor;
         this.yFactor = yFactor;
     }
 
     @Override
-    public AbstractPolygon scale(double x, double y) {
+    public Polygon scale(double x, double y) {
         this.xFactor *= x;
         this.yFactor *= y;
         return this;

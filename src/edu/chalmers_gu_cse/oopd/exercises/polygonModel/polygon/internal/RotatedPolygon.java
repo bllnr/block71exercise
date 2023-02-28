@@ -1,22 +1,22 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.internal;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.IPolygon;
+import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
 import java.awt.*;
 
 /**
  * Created by Niklas on 2016-02-28.
  */
-class RotatedPolygon extends ManipulatedPolygon implements IPolygon {
+class RotatedPolygon extends ManipulatedPolygon {
     private double radians;
 
-    RotatedPolygon(AbstractPolygon base, double radians) {
+    RotatedPolygon(Polygon base, double radians) {
         super(base);
         this.radians = radians;
     }
 
     @Override
-    public AbstractPolygon rotate(double radians) {
+    public Polygon rotate(double radians) {
         this.radians += radians;
         return this;
     }

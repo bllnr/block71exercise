@@ -11,6 +11,8 @@ import edu.chalmers_gu_cse.oopd.exercises.view2d.PolygonViewer;
 /* Controller */
 import edu.chalmers_gu_cse.oopd.exercises.controller.PolygonClicker;
 
+import javax.swing.*;
+
 /* By commenting out the imports above, and instead importing the edu.chalmers_gu_cse.oopd.edu.chalmers_gu_cse.oopd.exercises.polygonModel.adapter package,
  * we effectively switch to using the DIT952.edu.chalmers_gu_cse.oopd.edu.chalmers_gu_cse.oopd.exercises.polygonModel.shapes package.
  */
@@ -21,6 +23,7 @@ public class DrawPolygons {
     public static void main(String[] args) {
         PolygonModel polygons = initModel();
         PolygonViewer view = initViewForModel(polygons);
+        initUIForView(view);
         PolygonClicker controller = initClickerForView(polygons, view);
 
         Macro macro = setupAnimationMacro();
@@ -51,6 +54,14 @@ public class DrawPolygons {
         polygonModel.addListener(view);
         return view;
     }//initViewForModel
+
+    private static void initUIForView(PolygonViewer view) {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setBounds(30, 30, 300, 300);
+        frame.add(view);
+    }
 
     private static PolygonClicker initClickerForView(PolygonModel polygons, PolygonViewer view) {
         return new PolygonClicker(polygons, view);

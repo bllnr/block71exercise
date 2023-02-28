@@ -1,6 +1,6 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.internal;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.IPolygon;
+import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,8 +9,9 @@ import java.util.List;
 /**
  * Created by Niklas on 2016-02-29.
  */
-abstract class AbstractPolygon extends JComponent implements IPolygon {
-    // TODO: Visitor? Repository?
+abstract class AbstractPolygon extends JComponent implements Polygon {
+    // TODO 6: Consider what other ways we have to separate paint from
+    //  the model. Visitor? Repository? Servant?
     public void paint(Graphics g){
         List<Point> corners = getPoints();
         // first and last point should be the same
@@ -24,7 +25,6 @@ abstract class AbstractPolygon extends JComponent implements IPolygon {
         }
     }
 
-    protected abstract List<Point> getPoints();
 
     @Override
     public abstract AbstractPolygon translate(int x, int y);
