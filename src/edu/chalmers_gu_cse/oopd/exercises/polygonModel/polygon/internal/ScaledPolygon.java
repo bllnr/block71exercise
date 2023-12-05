@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Created by Niklas on 2016-02-28.
  */
-class ScaledPolygon extends ManipulatedPolygon {
+class ScaledPolygon extends DecoratedPolygon {
     double xFactor, yFactor;
 
     ScaledPolygon(Polygon base, double xFactor, double yFactor) {

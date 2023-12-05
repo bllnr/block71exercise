@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Created by Niklas on 2016-02-28.
  */
-class RotatedPolygon extends ManipulatedPolygon {
+class RotatedPolygon extends DecoratedPolygon {
     private double radians;
 
     RotatedPolygon(Polygon base, double radians) {

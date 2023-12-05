@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * Created by Niklas on 2016-02-28.
  */
-class TranslatedPolygon extends ManipulatedPolygon {
+class TranslatedPolygon extends DecoratedPolygon {
     int xMove;
     int yMove;
 

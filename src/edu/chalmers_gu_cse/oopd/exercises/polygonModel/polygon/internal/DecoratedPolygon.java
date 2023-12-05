@@ -5,10 +5,10 @@ import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 import java.awt.*;
 import java.util.List;
 
-public abstract class ManipulatedPolygon implements Polygon {
+public abstract class DecoratedPolygon implements Polygon {
     private edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon base;
 
-    protected ManipulatedPolygon(Polygon base){
+    protected DecoratedPolygon(Polygon base){
         this.base = base;
     }
 
