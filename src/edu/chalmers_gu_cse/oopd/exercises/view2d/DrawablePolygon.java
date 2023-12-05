@@ -13,7 +13,7 @@ public class DrawablePolygon extends Component implements Polygon {
         this.wrappedPolygon = wrappedPolygon;
     }
 
-    // TODO 6: Instead use Visitor? Repository? Servant?
+    // TODO 7: Instead use Visitor? Repository? Servant?
     public void paint(Graphics g){
         drawLinesBetweenCorners(g, getPoints());
     }

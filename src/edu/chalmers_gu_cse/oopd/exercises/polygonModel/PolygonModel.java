@@ -1,10 +1,7 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.macro.Transform;
 import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,7 +15,7 @@ import java.util.List;
  */
 public class PolygonModel implements ModelUpdateListener, Iterable<Polygon> {
 
-    // TODO 7: For extra challenge:
+    // TODO 8: For extra challenge:
     //  PubSub Pattern: Create several separate polygon sets,
     //  and let each set have its own dedicated Publisher. Make
     //  good use of these Publishers, by differentiating outputs.
@@ -39,8 +36,8 @@ public class PolygonModel implements ModelUpdateListener, Iterable<Polygon> {
     }
 
     // Delegate these methods to the animator
-    public void animate(Transform transform){
-        animator.animate(transform);
+    public void animate(){
+        animator.animate();
     }
 
     @Override

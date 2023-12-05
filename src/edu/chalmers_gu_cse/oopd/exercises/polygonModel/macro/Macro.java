@@ -1,29 +1,20 @@
 package edu.chalmers_gu_cse.oopd.exercises.polygonModel.macro;
 
-import edu.chalmers_gu_cse.oopd.exercises.polygonModel.polygon.Polygon;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Niklas on 2016-03-02.
- *
- * A Macro is a Composite for Transforms.
  */
-public class Macro implements Transform {
+public class Macro {
     private final List<Transform> transforms = new ArrayList<>();
 
-    public void addTransform(Transform transform){
-        transforms.add(transform);
-    }
+    // TODO: Step 2c: Implement this method (should be trivial)
+    public void addTransform(){}
 
-    @Override
-    public Polygon apply(Polygon polygon) {
-        Polygon temp = polygon;
-        for (Transform transform : transforms) {
-            temp = transform.apply(temp);
-        }
-        return temp;
-    }
+    // TODO: Step 2d: Implement a method transform. What signature should it have?
+    // public ... transform(...){}
+
+    // TODO: Step 2e: What design pattern have we just implemented?
 
 }
